@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Product</title>
+</head>
+<body>
+<h1>Product Details</h1>
+<div>
+    <p>ID: <span th:text="${product.id}">1</span></p>
+    <p>Name: <span th:text="${product.name}">Product A</span></p>
+    <p>Price: <span th:text="${product.price}">100.0</span></p>
+</div>
+<a th:href="@{/products}">Back to Products List</a>
+</body>
+</html>

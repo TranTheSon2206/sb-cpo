@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Order</title>
+</head>
+<body>
+<h1>Order Details</h1>
+<div>
+    <p>ID: <span th:text="${order.id}">1</span></p>
+    <p>Customer: <span th:text="${order.customer.name}">John Doe</span></p>
+    <p>Products:</p>
+    <ul>
+        <li th:each="product : ${order.products}" th:text="${product.name}">Product A</li>
+    </ul>
+</div>
+<a th:href="@{/orders}">Back to Orders List</a>
+</body>
+</html>

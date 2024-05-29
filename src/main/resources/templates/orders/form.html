@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Order</title>
+</head>
+<body>
+<h1>Create Order</h1>
+<form th:action="@{/orders}" th:object="${order}" method="post">
+    <div>
+        <label for="customer">Customer:</label>
+        <select id="customer" th:field="*{customer.id}">
+            <option th:each="customer : ${customers}" th:value="${customer.id}" th:text="${customer.name}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="products">Sản phẩm:</label>
+        <select id="products" th:field="*{products}" multiple>
+            <option th:each="product : ${products}" th:value="${product.id}" th:text="${product.name}"></option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+</body>
+</html>
